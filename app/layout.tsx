@@ -3,7 +3,9 @@ import { Inter } from "next/font/google";
 import { AltNavigasyon } from "@/components/AltNavigasyon";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
+import { YapisalVeri } from "@/components/YapisalVeri";
 import { site } from "@/data/site";
+import { kurumVerisi, siteVerisi } from "@/lib/yapisalVeri";
 import "./globals.css";
 
 const inter = Inter({
@@ -41,6 +43,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         >
           İçeriğe geç
         </a>
+        <YapisalVeri veri={kurumVerisi()} />
+        <YapisalVeri veri={siteVerisi()} />
         <Header />
         <main id="icerik">{children}</main>
         <Footer />

@@ -3,9 +3,11 @@ import { notFound } from "next/navigation";
 import { Avatar } from "@/components/Avatar";
 import { Bolum } from "@/components/Bolum";
 import { ButonLink } from "@/components/Buton";
+import { YapisalVeri } from "@/components/YapisalVeri";
 import { koclarimizSayfasi } from "@/data/icerik";
 import { koclar, kocBul } from "@/data/koclar";
 import { fiyatFormatla } from "@/lib/format";
+import { kocVerisi } from "@/lib/yapisalVeri";
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -36,6 +38,7 @@ export default async function KocDetaySayfasi({ params }: Props) {
 
   return (
     <Bolum>
+      <YapisalVeri veri={kocVerisi(koc)} />
       <div className="grid gap-6 md:grid-cols-[minmax(0,320px)_1fr] md:gap-10">
         <Avatar
           foto={koc.foto}
