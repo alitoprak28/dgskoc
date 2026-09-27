@@ -108,9 +108,9 @@ export function GeriSayim({ tarih, baslik, tarihMetni, rozet, not }: Props) {
   }, [hedef]);
 
   return (
-    <div className="rounded-2xl bg-navy px-5 py-6 md:px-8 md:py-8">
+    <div className="rounded-2xl bg-navy px-5 py-6 md:px-8 md:py-9 lg:px-10 lg:py-11">
       {/* Masaustunde iki sutun; mobilde sira baslik -> halkalar -> not */}
-      <div className="md:grid md:grid-cols-[minmax(0,1fr)_auto] md:items-center md:gap-10">
+      <div className="md:grid md:grid-cols-[minmax(0,1fr)_auto] md:items-center md:gap-10 lg:gap-14">
         <div className="md:col-start-1 md:row-start-1">
           <div className="flex flex-wrap items-center gap-x-3 gap-y-2">
             <h2 className="text-lg font-extrabold text-white md:text-xl">{baslik}</h2>
@@ -125,7 +125,7 @@ export function GeriSayim({ tarih, baslik, tarihMetni, rozet, not }: Props) {
 
         {/* Halkalar gorsel; ekran okuyucu her saniye okumasin diye gizli, ozeti asagida */}
         <div
-          className="mt-6 grid shrink-0 grid-cols-4 gap-3 sm:gap-5 md:mt-0 md:col-start-2 md:row-span-2 md:row-start-1 md:gap-4 lg:gap-5"
+          className="mt-6 grid shrink-0 grid-cols-4 gap-3 sm:gap-5 md:mt-0 md:col-start-2 md:row-span-2 md:row-start-1 md:gap-5 lg:gap-7"
           aria-hidden="true"
         >
           {BIRIMLER.map((birim) => {
@@ -133,22 +133,22 @@ export function GeriSayim({ tarih, baslik, tarihMetni, rozet, not }: Props) {
             const oran = kalan ? Math.min(deger / birim.dongu, 1) : 0;
             return (
               <div key={birim.anahtar} className="flex flex-col items-center">
-                <div className="relative aspect-square w-full max-w-[92px] md:w-[88px] lg:w-[96px]">
+                <div className="relative aspect-square w-full max-w-[92px] md:w-[110px] md:max-w-none lg:w-[128px]">
                   <Halka oran={oran} hizli={birim.anahtar === "saniye"} />
                   <div className="absolute inset-0 flex items-center justify-center">
-                    <span className="text-xl font-extrabold tabular-nums leading-none text-white md:text-2xl">
+                    <span className="text-xl font-extrabold tabular-nums leading-none text-white md:text-[26px] lg:text-[32px]">
                       <AkanRakam deger={kalan ? String(deger).padStart(2, "0") : "--"} />
                     </span>
                   </div>
                 </div>
-                <span className="mt-2.5 text-[11px] text-navy-soft">{birim.etiket}</span>
+                <span className="mt-2.5 text-[11px] text-navy-soft lg:mt-3 lg:text-xs">{birim.etiket}</span>
               </div>
             );
           })}
         </div>
 
         {not ? (
-          <p className="mt-6 text-xs leading-relaxed text-navy-soft/80 md:col-start-1 md:row-start-2 md:mt-4 md:max-w-sm">
+          <p className="mt-6 text-xs leading-relaxed text-navy-soft/80 md:col-start-1 md:row-start-2 md:mt-4 md:max-w-md">
             {not}
           </p>
         ) : null}
