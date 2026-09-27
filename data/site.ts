@@ -17,7 +17,10 @@ export const site = {
     kocSayisi: "20+", // PLACEHOLDER
     deneyimYili: "4", // PLACEHOLDER
   },
-  sinavTarihi: null as string | null, // null -> bilgilendirme kutusu, dolu -> geri sayim
+  // TAHMINI tarih — OSYM resmi takvimi aciklamadi. Aciklaninca burasi guncellenecek.
+  // null yapilirsa alan otomatik olarak "tarih aciklanmadi" bilgilendirme kutusuna doner.
+  sinavTarihi: "2027-07-18T10:00:00+03:00" as string | null,
+  sinavTarihiTahmini: true, // false yapilinca "tahmini" uyarisi kalkar
   oneCikanHikaye: {
     ad: "Zeynep Arslan",
     ozet: "PLACEHOLDER — öne çıkan başarı hikayesi metni buraya gelecek.",

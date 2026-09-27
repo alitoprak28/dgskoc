@@ -22,8 +22,17 @@ const BIRIMLER: { anahtar: keyof NonNullable<Kalan>; etiket: string }[] = [
   { anahtar: "saniye", etiket: "saniye" },
 ];
 
-/** site.sinavTarihi dolduruldugunda devreye giren geri sayim. */
-export function GeriSayim({ tarih, baslik }: { tarih: string; baslik: string }) {
+type Props = {
+  tarih: string;
+  baslik: string;
+  /** Okunabilir tarih metni, sunucuda bicimlendirilip veriliyor */
+  tarihMetni: string;
+  /** Tarih tahminiyse gosterilen rozet ve aciklama */
+  rozet?: string;
+  not?: string;
+};
+
+export function GeriSayim({ tarih, baslik, tarihMetni, rozet, not }: Props) {
   const hedef = new Date(tarih).getTime();
   const [kalan, setKalan] = useState<Kalan>(null);
 
@@ -35,18 +44,29 @@ export function GeriSayim({ tarih, baslik }: { tarih: string; baslik: string }) 
 
   return (
     <div className="rounded-xl border border-gray-border bg-gray-bg p-4 md:p-5">
-      <h2 className="text-base font-bold text-navy md:text-lg">{baslik}</h2>
-      {/* Sunucuda ve ilk boyamada bos; hydration uyusmazligi olmamasi icin */}
-      <div className="mt-3 grid grid-cols-4 gap-2" aria-live="polite">
+      <div className="flex flex-wrap items-center gap-x-3 gap-y-2">
+        <h2 className="text-base font-bold text-navy md:text-lg">{baslik}</h2>
+        {rozet ? (
+          <span className="rounded-full bg-white px-2.5 py-1 text-[11px] font-semibold text-gray-text">
+            {rozet}
+          </span>
+        ) : null}
+      </div>
+      <p className="mt-1 text-sm font-semibold text-navy">{tarihMetni}</p>
+
+      {/* Sunucuda ve ilk boyamada "--"; hydration uyusmazligi olmamasi icin */}
+      <div className="mt-4 grid grid-cols-4 gap-2" aria-live="polite">
         {BIRIMLER.map((birim) => (
           <div key={birim.anahtar} className="rounded-lg bg-white px-2 py-3 text-center">
-            <div className="text-xl font-extrabold text-navy md:text-2xl">
+            <div className="text-xl font-extrabold tabular-nums text-navy md:text-2xl">
               {kalan ? String(kalan[birim.anahtar]).padStart(2, "0") : "--"}
             </div>
             <div className="mt-1 text-[11px] text-gray-text">{birim.etiket}</div>
           </div>
         ))}
       </div>
+
+      {not ? <p className="mt-3 max-w-2xl text-xs leading-relaxed text-gray-text">{not}</p> : null}
     </div>
   );
 }

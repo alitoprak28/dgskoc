@@ -2,13 +2,31 @@ import { GeriSayim } from "@/components/GeriSayim";
 import { anasayfa } from "@/data/icerik";
 import { site } from "@/data/site";
 
+// Tarih sunucuda bicimlendiriliyor; istemcide tekrar uretilmedigi icin hydration uyusmazligi olmuyor
+const tarihBicimi = new Intl.DateTimeFormat("tr-TR", {
+  weekday: "long",
+  day: "numeric",
+  month: "long",
+  year: "numeric",
+  timeZone: "Europe/Istanbul",
+});
+
 /**
- * Sinav tarihi acikladiginda /data/site.ts icindeki sinavTarihi doldurulur ve
- * bu alan otomatik olarak geri sayima doner. Su an tarih yok, bilgilendirme kutusu gorunur.
+ * /data/site.ts icindeki sinavTarihi doluysa geri sayim, bossa bilgilendirme kutusu gosterilir.
+ * sinavTarihiTahmini true iken tarihin tahmini oldugu acikca belirtilir.
  */
 export function SinavBilgi() {
   if (site.sinavTarihi) {
-    return <GeriSayim tarih={site.sinavTarihi} baslik={anasayfa.sinavBilgi.baslik} />;
+    const tahmini = site.sinavTarihiTahmini;
+    return (
+      <GeriSayim
+        tarih={site.sinavTarihi}
+        baslik={anasayfa.sinavBilgi.geriSayimBasligi}
+        tarihMetni={tarihBicimi.format(new Date(site.sinavTarihi))}
+        rozet={tahmini ? anasayfa.sinavBilgi.tahminRozeti : undefined}
+        not={tahmini ? anasayfa.sinavBilgi.tahminNotu : undefined}
+      />
+    );
   }
 
   return (

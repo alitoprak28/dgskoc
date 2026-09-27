@@ -50,10 +50,16 @@ export const anasayfa = {
     baslik: "Öne çıkan başarı hikayesi",
   },
   sinavBilgi: {
+    // sinavTarihi bos oldugunda gosterilen bilgilendirme kutusu
     rozet: "Yakında",
     baslik: "2027-DGS tarihi açıklandığında burada olacak",
     aciklama:
       "ÖSYM tarafından 2027-DGS sınav tarihi henüz açıklanmadı. Duyurulur duyurulmaz bu alanı güncelleyeceğiz.",
+    // sinavTarihi dolu oldugunda gosterilen geri sayim
+    geriSayimBasligi: "2027-DGS'ye kalan süre",
+    tahminRozeti: "Tahmini tarih",
+    tahminNotu:
+      "ÖSYM resmî sınav takvimini henüz açıklamadı. Buradaki tarih geçmiş yılların takvimine göre yapılan bir tahmindir; resmî tarih duyurulduğunda güncelleyeceğiz.",
   },
   kapanis: {
     baslik: "Hedefine giden yolda yalnız yürüme",
