@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 type Kalan = { gun: number; saat: number; dakika: number; saniye: number } | null;
 
@@ -21,6 +21,40 @@ const BIRIMLER: { anahtar: keyof NonNullable<Kalan>; etiket: string }[] = [
   { anahtar: "dakika", etiket: "dakika" },
   { anahtar: "saniye", etiket: "saniye" },
 ];
+
+/** Degeri degistiginde eski rakam yukari cikar, yenisi asagidan akar. */
+function AkanRakam({ deger }: { deger: string }) {
+  const [cikan, setCikan] = useState<string | null>(null);
+  // Onceki deger ref'te tutuluyor: efekt yalnizca deger degisince calissin,
+  // aksi halde kendi setState'i efekti yeniden tetikleyip zamanlayiciyi iptal ediyor
+  const oncekiRef = useRef(deger);
+
+  useEffect(() => {
+    if (oncekiRef.current === deger) return;
+    setCikan(oncekiRef.current);
+    oncekiRef.current = deger;
+    const zamanlayici = setTimeout(() => setCikan(null), 420);
+    return () => clearTimeout(zamanlayici);
+  }, [deger]);
+
+  return (
+    <span className="relative block h-[1.1em] overflow-hidden">
+      {/* key degisince animasyon bastan calisir */}
+      <span key={deger} className="block animate-[rakamGir_.4s_cubic-bezier(.22,.8,.3,1)_forwards]">
+        {deger}
+      </span>
+      {cikan !== null ? (
+        <span
+          key={`cikan-${cikan}`}
+          className="absolute inset-0 block animate-[rakamCik_.4s_cubic-bezier(.22,.8,.3,1)_forwards]"
+          aria-hidden="true"
+        >
+          {cikan}
+        </span>
+      ) : null}
+    </span>
+  );
+}
 
 type Props = {
   tarih: string;
@@ -54,17 +88,24 @@ export function GeriSayim({ tarih, baslik, tarihMetni, rozet, not }: Props) {
       </div>
       <p className="mt-1 text-sm font-semibold text-navy">{tarihMetni}</p>
 
-      {/* Sunucuda ve ilk boyamada "--"; hydration uyusmazligi olmamasi icin */}
-      <div className="mt-4 grid grid-cols-4 gap-2" aria-live="polite">
+      {/* Kutular gorsel; ekran okuyucu her saniye okumasin diye gizli, ozeti asagida */}
+      <div className="mt-4 grid grid-cols-4 gap-2" aria-hidden="true">
         {BIRIMLER.map((birim) => (
-          <div key={birim.anahtar} className="rounded-lg bg-white px-2 py-3 text-center">
-            <div className="text-xl font-extrabold tabular-nums text-navy md:text-2xl">
-              {kalan ? String(kalan[birim.anahtar]).padStart(2, "0") : "--"}
+          <div key={birim.anahtar} className="rounded-lg bg-white px-2 py-3.5 text-center">
+            <div className="text-2xl font-extrabold leading-none tabular-nums text-navy md:text-[28px]">
+              <AkanRakam
+                deger={kalan ? String(kalan[birim.anahtar]).padStart(2, "0") : "--"}
+              />
             </div>
-            <div className="mt-1 text-[11px] text-gray-text">{birim.etiket}</div>
+            <div className="mt-2 text-[11px] text-gray-text">{birim.etiket}</div>
           </div>
         ))}
       </div>
+
+      {/* Saniyede bir degismeyen, gun bazli erisilebilir ozet */}
+      <p className="sr-only" aria-live="polite">
+        {kalan ? `${baslik}: ${kalan.gun} gün` : baslik}
+      </p>
 
       {not ? <p className="mt-3 max-w-2xl text-xs leading-relaxed text-gray-text">{not}</p> : null}
     </div>

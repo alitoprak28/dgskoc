@@ -24,6 +24,29 @@
   }
 }
 
+/* Geri sayim rakamlarinin akis gecisi */
+@keyframes rakamGir {
+  from {
+    transform: translateY(65%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes rakamCik {
+  from {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateY(-65%);
+    opacity: 0;
+  }
+}
+
 /* Hareket azaltma tercihi: tum gecisler devre disi */
 @media (prefers-reduced-motion: reduce) {
   *,
