@@ -13,7 +13,7 @@ export const site = {
     youtube: "",
   },
   istatistikler: {
-    ogrenciSayisi: "320", // musteriden geldi
+    ogrenciSayisi: "320+", // musteriden geldi (artacagi icin + ile)
     kocSayisi: "8", // musteriden geldi
     deneyimYili: "4", // musteriden geldi
   },

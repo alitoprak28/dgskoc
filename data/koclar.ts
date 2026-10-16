@@ -98,6 +98,34 @@ export const koclar: Koc[] = [
     uzmanlik: ["Türkçe", "Program takibi"],
     aylikUcret: 2600,
   },
+  {
+    slug: "selin-korkmaz",
+    ad: "Selin Korkmaz",
+    puanTuru: "Sözel",
+    puanTuruKisa: "SÖZ",
+    derece: 289,
+    universite: "Hacettepe Üniversitesi",
+    alan: "Psikoloji",
+    foto: "",
+    biyografi:
+      "PLACEHOLDER — koçun kendi DGS süreci, nasıl çalıştığı ve öğrencileriyle kurduğu çalışma düzeni bu alanda anlatılacak.\n\nPLACEHOLDER — ikinci paragraf: koçluk yaklaşımı ve öğrenciden beklentileri.",
+    uzmanlik: ["Türkçe", "Paragraf", "Deneme analizi"],
+    aylikUcret: 3000,
+  },
+  {
+    slug: "kerem-yalcin",
+    ad: "Kerem Yalçın",
+    puanTuru: "Sayısal",
+    puanTuruKisa: "SAY",
+    derece: 512,
+    universite: "Yıldız Teknik Üniversitesi",
+    alan: "İnşaat Mühendisliği",
+    foto: "",
+    biyografi:
+      "PLACEHOLDER — koçun kendi DGS süreci, nasıl çalıştığı ve öğrencileriyle kurduğu çalışma düzeni bu alanda anlatılacak.\n\nPLACEHOLDER — ikinci paragraf: koçluk yaklaşımı ve öğrenciden beklentileri.",
+    uzmanlik: ["Matematik", "Geometri", "Süre yönetimi"],
+    aylikUcret: 2700,
+  },
 ];
 
 // Kart ve select basligi: "Büşra Savur (EA 2158.)"
