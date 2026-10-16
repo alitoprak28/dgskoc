@@ -3,13 +3,10 @@ import { Bolum, BolumBasligi } from "@/components/Bolum";
 import { DegerKartlari } from "@/components/DegerKartlari";
 import { Hero } from "@/components/Hero";
 import { IstatistikSeridi } from "@/components/IstatistikSeridi";
-import { KapanisCta } from "@/components/KapanisCta";
 import { KocKarti } from "@/components/KocKarti";
 import { SinavBilgi } from "@/components/SinavBilgi";
-import { YorumKarti } from "@/components/YorumKarti";
 import { anasayfa } from "@/data/icerik";
 import { koclar } from "@/data/koclar";
-import { yorumlar } from "@/data/yorumlar";
 
 export default function Anasayfa() {
   return (
@@ -47,20 +44,7 @@ export default function Anasayfa() {
       </Bolum>
 
       <Bolum>
-        <BolumBasligi baslik={anasayfa.yorumlarOnizleme.baslik} />
-        <div className="grid gap-3 md:grid-cols-3 md:gap-5">
-          {yorumlar.slice(0, 3).map((yorum) => (
-            <YorumKarti key={yorum.ad} yorum={yorum} />
-          ))}
-        </div>
-      </Bolum>
-
-      <Bolum>
         <SinavBilgi />
-      </Bolum>
-
-      <Bolum zemin="beyaz" className="pt-0">
-        <KapanisCta />
       </Bolum>
     </>
   );
