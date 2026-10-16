@@ -31,6 +31,6 @@ export const site = {
 // Istatistik seridinde kullanilan etiketler
 export const istatistikListesi = [
   { deger: site.istatistikler.ogrenciSayisi, etiket: "öğrenciyle çalıştık" },
-  { deger: site.istatistikler.kocSayisi, etiket: "dereceli koç" },
+  { deger: site.istatistikler.kocSayisi, etiket: "koç" },
   { deger: site.istatistikler.deneyimYili, etiket: "yıllık deneyim" },
 ];
