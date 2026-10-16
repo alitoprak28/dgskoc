@@ -55,28 +55,6 @@ export default async function KocDetaySayfasi({ params }: Props) {
           <p className="mt-1 text-sm text-gray-text">{koc.universite}</p>
           <p className="text-sm text-gray-text">{koc.alan}</p>
 
-          <p className="mt-6 max-w-2xl whitespace-pre-line text-sm leading-relaxed text-navy">
-            {koc.biyografi}
-          </p>
-
-          {koc.uzmanlik?.length ? (
-            <div className="mt-6">
-              <h2 className="text-sm font-semibold text-navy">
-                {koclarimizSayfasi.uzmanlikBasligi}
-              </h2>
-              <ul className="mt-2 flex flex-wrap gap-2">
-                {koc.uzmanlik.map((konu) => (
-                  <li
-                    key={konu}
-                    className="rounded-lg border border-gray-border bg-gray-bg px-3 py-1.5 text-xs text-navy"
-                  >
-                    {konu}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ) : null}
-
           <div className="mt-8 flex flex-col items-start gap-4 rounded-xl border border-gray-border bg-gray-bg p-4 sm:flex-row sm:items-center sm:justify-between md:p-5">
             <div>
               <p className="text-xs text-gray-text">{koclarimizSayfasi.ucretEtiketi}</p>

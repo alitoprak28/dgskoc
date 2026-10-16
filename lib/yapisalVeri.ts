@@ -52,6 +52,5 @@ export function kocVerisi(koc: Koc) {
     url: `${site.alanAdi}/koclarimiz/${koc.slug}/`,
     alumniOf: { "@type": "CollegeOrUniversity", name: koc.universite },
     worksFor: { "@type": "EducationalOrganization", name: site.ad, url: site.alanAdi },
-    ...(koc.uzmanlik?.length ? { knowsAbout: koc.uzmanlik } : {}),
   };
 }

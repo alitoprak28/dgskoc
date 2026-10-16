@@ -70,7 +70,7 @@ export const anasayfa = {
 
 export const koclarimizSayfasi = {
   baslik: "Koçlarımız",
-  aciklama: "Alanında dereceye girmiş, süreci bizzat yaşamış mentörlerden oluşan ekibimiz",
+  aciklama: "Alanında başarıya ulaşmış, süreci bizzat yaşamış mentörlerden oluşan ekibimiz",
   detayCta: "Bu koçla çalışmak istiyorum",
   ucretEtiketi: "Aylık ücret",
   uzmanlikBasligi: "Uzmanlık alanları",
