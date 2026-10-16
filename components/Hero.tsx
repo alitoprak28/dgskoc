@@ -21,7 +21,7 @@ export function Hero() {
           <h1 className="text-2xl font-extrabold leading-[1.22] tracking-tight text-white md:max-w-[520px] md:text-[33px]">
             {anasayfa.hero.baslik}
           </h1>
-          <p className="mx-auto mt-4 max-w-2xl text-sm leading-relaxed text-navy-soft md:mx-0 md:text-[14.5px]">
+          <p className="mx-auto mt-4 max-w-2xl text-[15px] leading-relaxed text-white/90 md:mx-0 md:text-base">
             {anasayfa.hero.altBaslik}
           </p>
           <div className="mt-7 flex flex-col items-stretch gap-3 sm:flex-row sm:justify-center md:justify-start">

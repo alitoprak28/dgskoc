@@ -6,7 +6,6 @@ import { IstatistikSeridi } from "@/components/IstatistikSeridi";
 import { KapanisCta } from "@/components/KapanisCta";
 import { KocKarti } from "@/components/KocKarti";
 import { SinavBilgi } from "@/components/SinavBilgi";
-import { SurecAdimlari } from "@/components/SurecAdimlari";
 import { YorumKarti } from "@/components/YorumKarti";
 import { anasayfa } from "@/data/icerik";
 import { koclar } from "@/data/koclar";
@@ -30,10 +29,6 @@ export default function Anasayfa() {
       </Bolum>
 
       <Bolum zemin="gri">
-        <SurecAdimlari />
-      </Bolum>
-
-      <Bolum>
         <BolumBasligi
           baslik={anasayfa.koclarOnizleme.baslik}
           yan={
@@ -52,7 +47,7 @@ export default function Anasayfa() {
         </div>
       </Bolum>
 
-      <Bolum zemin="gri">
+      <Bolum>
         <BolumBasligi baslik={anasayfa.yorumlarOnizleme.baslik} />
         <div className="grid gap-3 md:grid-cols-3 md:gap-5">
           {yorumlar.slice(0, 3).map((yorum) => (

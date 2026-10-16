@@ -8,7 +8,7 @@ export const anasayfa = {
     ikincilCta: { etiket: "Koçlarımızı incele", href: "/koclarimiz" },
   },
   degerler: {
-    baslik: "Sana ne sunuyoruz",
+    baslik: "Sana ne sunuyoruz?",
     kartlar: [
       {
         baslik: "Kişisel program",
