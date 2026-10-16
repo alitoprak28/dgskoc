@@ -1,20 +1,23 @@
-import { Avatar } from "@/components/Avatar";
 import { ButonLink } from "@/components/Buton";
 import { anasayfa } from "@/data/icerik";
-import { koclar } from "@/data/koclar";
 
-const ONIZLEME_ADEDI = 3;
-
-/** Anasayfa hero'su: lacivert zemin, solda mesaj, sagda koc onizleme kartlari. */
+/** Anasayfa hero'su: arka plan fotografi uzerinde koyu katman ve mesaj. */
 export function Hero() {
-  const onizleme = koclar.slice(0, ONIZLEME_ADEDI);
-  const kalan = koclar.length - onizleme.length;
-
   return (
-    <section className="bg-navy">
-      <div className="mx-auto grid max-w-6xl gap-10 px-4 pb-16 pt-10 md:grid-cols-[1.15fr_0.85fr] md:items-center md:px-8 md:pb-24 md:pt-16">
-        <div className="text-center md:text-left">
-          {/* max-w: masaustunde baslik iki satira bolunsun (onaylanmis tasarim) */}
+    <section className="relative overflow-hidden bg-navy">
+      {/* Mobilde kucultulmus gorsel yukleniyor (52KB), masaustunde tam cozunurluk */}
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 bg-[url('/gorsel/hero-arkaplan-mobil.jpg')] bg-cover bg-center contrast-[1.08] saturate-[1.1] md:bg-[url('/gorsel/hero-arkaplan.jpg')]"
+      />
+      {/* Mobilde yukaridan asagi aciliyor (metin ustte), masaustunde soldan saga */}
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 bg-[linear-gradient(180deg,rgba(23,48,84,0.9)_0%,rgba(23,48,84,0.84)_52%,rgba(23,48,84,0.5)_100%)] md:bg-[linear-gradient(90deg,rgba(23,48,84,0.95)_0%,rgba(23,48,84,0.85)_45%,rgba(23,48,84,0.12)_100%)]"
+      />
+
+      <div className="relative mx-auto max-w-6xl px-4 pb-16 pt-12 md:px-8 md:pb-28 md:pt-24">
+        <div className="text-center md:max-w-xl md:text-left">
           <h1 className="text-2xl font-extrabold leading-[1.22] tracking-tight text-white md:max-w-[520px] md:text-[33px]">
             {anasayfa.hero.baslik}
           </h1>
@@ -34,36 +37,6 @@ export function Hero() {
               {anasayfa.hero.ikincilCta.etiket}
             </ButonLink>
           </div>
-        </div>
-
-        {/* Koc onizleme kartlari mobilde gizli */}
-        <div className="hidden md:block">
-          <ul className="space-y-2.5">
-            {onizleme.map((koc) => (
-              <li
-                key={koc.slug}
-                className="flex items-center gap-3 rounded-xl border border-white/[.14] bg-white/[.07] px-[13px] py-[11px]"
-              >
-                <Avatar
-                  foto={koc.foto}
-                  ad={koc.ad}
-                  className="h-10 w-10 shrink-0 rounded-[10px] bg-white/[.14]"
-                  ikonClassName="h-5 w-5 text-white/70"
-                />
-                <div className="min-w-0">
-                  <p className="truncate text-sm font-bold text-white">
-                    {koc.ad} ({koc.puanTuruKisa} {koc.derece}.)
-                  </p>
-                  <p className="truncate text-[11px] text-navy-soft">
-                    {koc.universite} · {koc.alan}
-                  </p>
-                </div>
-              </li>
-            ))}
-          </ul>
-          {kalan > 0 ? (
-            <p className="mt-3 text-center text-[11.5px] text-navy-soft">ve {kalan} koç daha</p>
-          ) : null}
         </div>
       </div>
     </section>

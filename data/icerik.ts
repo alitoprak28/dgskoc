@@ -3,7 +3,7 @@ export const anasayfa = {
   hero: {
     baslik: "DGS'de doğru stratejiyle hedefine ulaş",
     altBaslik:
-      "Kişiselleştirilmiş çalışma programı, düzenli deneme analizi ve bire bir takiple sınav sürecinde yanındayız.",
+      "Sınav sürecinde zamanını verimli kullanmak, eksiklerini belirlemek ve hedeflerine uygun bir çalışma planıyla ilerlemek istiyorsan kendi yol haritanı birlikte oluşturabiliriz.",
     birincilCta: { etiket: "Hemen başvur", href: "/basvuru" },
     ikincilCta: { etiket: "Koçlarımızı incele", href: "/koclarimiz" },
   },
