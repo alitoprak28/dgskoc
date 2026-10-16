@@ -55,6 +55,10 @@ export default async function KocDetaySayfasi({ params }: Props) {
           <p className="mt-1 text-sm text-gray-text">{koc.universite}</p>
           <p className="text-sm text-gray-text">{koc.alan}</p>
 
+          <p className="mt-6 max-w-2xl whitespace-pre-line text-sm leading-relaxed text-navy">
+            {koc.biyografi}
+          </p>
+
           <div className="mt-8 flex flex-col items-start gap-4 rounded-xl border border-gray-border bg-gray-bg p-4 sm:flex-row sm:items-center sm:justify-between md:p-5">
             <div>
               <p className="text-xs text-gray-text">{koclarimizSayfasi.ucretEtiketi}</p>
