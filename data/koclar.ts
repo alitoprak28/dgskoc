@@ -24,7 +24,7 @@ export const koclar: Koc[] = [
     alan: "İşletme",
     foto: "",
     biyografi:
-      "PLACEHOLDER — koçun kendi DGS süreci, nasıl çalıştığı ve öğrencileriyle kurduğu çalışma düzeni bu alanda anlatılacak.\n\nPLACEHOLDER — ikinci paragraf: koçluk yaklaşımı ve öğrenciden beklentileri.",
+      "PLACEHOLDER — koçun kendi DGS süreci, nasıl çalıştığı ve öğrencileriyle kurduğu çalışma düzeni bu alanda anlatılacak.",
     uzmanlik: ["Matematik", "Program takibi", "Deneme analizi"],
     aylikUcret: 3000,
   },
@@ -38,7 +38,7 @@ export const koclar: Koc[] = [
     alan: "Bilgisayar Mühendisliği",
     foto: "",
     biyografi:
-      "PLACEHOLDER — koçun kendi DGS süreci, nasıl çalıştığı ve öğrencileriyle kurduğu çalışma düzeni bu alanda anlatılacak.\n\nPLACEHOLDER — ikinci paragraf: koçluk yaklaşımı ve öğrenciden beklentileri.",
+      "PLACEHOLDER — koçun kendi DGS süreci, nasıl çalıştığı ve öğrencileriyle kurduğu çalışma düzeni bu alanda anlatılacak.",
     uzmanlik: ["Matematik", "Geometri", "Sayısal strateji"],
     aylikUcret: 3500,
   },
@@ -52,7 +52,7 @@ export const koclar: Koc[] = [
     alan: "Hukuk",
     foto: "",
     biyografi:
-      "PLACEHOLDER — koçun kendi DGS süreci, nasıl çalıştığı ve öğrencileriyle kurduğu çalışma düzeni bu alanda anlatılacak.\n\nPLACEHOLDER — ikinci paragraf: koçluk yaklaşımı ve öğrenciden beklentileri.",
+      "PLACEHOLDER — koçun kendi DGS süreci, nasıl çalıştığı ve öğrencileriyle kurduğu çalışma düzeni bu alanda anlatılacak.",
     uzmanlik: ["Türkçe", "Paragraf", "Sözel mantık"],
     aylikUcret: 3200,
   },
@@ -66,7 +66,7 @@ export const koclar: Koc[] = [
     alan: "Ekonomi",
     foto: "",
     biyografi:
-      "PLACEHOLDER — koçun kendi DGS süreci, nasıl çalıştığı ve öğrencileriyle kurduğu çalışma düzeni bu alanda anlatılacak.\n\nPLACEHOLDER — ikinci paragraf: koçluk yaklaşımı ve öğrenciden beklentileri.",
+      "PLACEHOLDER — koçun kendi DGS süreci, nasıl çalıştığı ve öğrencileriyle kurduğu çalışma düzeni bu alanda anlatılacak.",
     uzmanlik: ["Matematik", "Türkçe", "Süre yönetimi"],
     aylikUcret: 3800,
   },
@@ -80,7 +80,7 @@ export const koclar: Koc[] = [
     alan: "Endüstri Mühendisliği",
     foto: "",
     biyografi:
-      "PLACEHOLDER — koçun kendi DGS süreci, nasıl çalıştığı ve öğrencileriyle kurduğu çalışma düzeni bu alanda anlatılacak.\n\nPLACEHOLDER — ikinci paragraf: koçluk yaklaşımı ve öğrenciden beklentileri.",
+      "PLACEHOLDER — koçun kendi DGS süreci, nasıl çalıştığı ve öğrencileriyle kurduğu çalışma düzeni bu alanda anlatılacak.",
     uzmanlik: ["Geometri", "Deneme analizi"],
     aylikUcret: 2800,
   },
@@ -94,7 +94,7 @@ export const koclar: Koc[] = [
     alan: "İşletme",
     foto: "",
     biyografi:
-      "PLACEHOLDER — koçun kendi DGS süreci, nasıl çalıştığı ve öğrencileriyle kurduğu çalışma düzeni bu alanda anlatılacak.\n\nPLACEHOLDER — ikinci paragraf: koçluk yaklaşımı ve öğrenciden beklentileri.",
+      "PLACEHOLDER — koçun kendi DGS süreci, nasıl çalıştığı ve öğrencileriyle kurduğu çalışma düzeni bu alanda anlatılacak.",
     uzmanlik: ["Türkçe", "Program takibi"],
     aylikUcret: 2600,
   },
@@ -108,7 +108,7 @@ export const koclar: Koc[] = [
     alan: "Psikoloji",
     foto: "",
     biyografi:
-      "PLACEHOLDER — koçun kendi DGS süreci, nasıl çalıştığı ve öğrencileriyle kurduğu çalışma düzeni bu alanda anlatılacak.\n\nPLACEHOLDER — ikinci paragraf: koçluk yaklaşımı ve öğrenciden beklentileri.",
+      "PLACEHOLDER — koçun kendi DGS süreci, nasıl çalıştığı ve öğrencileriyle kurduğu çalışma düzeni bu alanda anlatılacak.",
     uzmanlik: ["Türkçe", "Paragraf", "Deneme analizi"],
     aylikUcret: 3000,
   },
@@ -122,7 +122,7 @@ export const koclar: Koc[] = [
     alan: "İnşaat Mühendisliği",
     foto: "",
     biyografi:
-      "PLACEHOLDER — koçun kendi DGS süreci, nasıl çalıştığı ve öğrencileriyle kurduğu çalışma düzeni bu alanda anlatılacak.\n\nPLACEHOLDER — ikinci paragraf: koçluk yaklaşımı ve öğrenciden beklentileri.",
+      "PLACEHOLDER — koçun kendi DGS süreci, nasıl çalıştığı ve öğrencileriyle kurduğu çalışma düzeni bu alanda anlatılacak.",
     uzmanlik: ["Matematik", "Geometri", "Süre yönetimi"],
     aylikUcret: 2700,
   },
