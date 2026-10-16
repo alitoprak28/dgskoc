@@ -13,9 +13,9 @@ export const site = {
     youtube: "",
   },
   istatistikler: {
-    ogrenciSayisi: "450+", // PLACEHOLDER — musteriden gelecek
-    kocSayisi: "20+", // PLACEHOLDER
-    deneyimYili: "4", // PLACEHOLDER
+    ogrenciSayisi: "320", // musteriden geldi
+    kocSayisi: "8", // musteriden geldi
+    deneyimYili: "4", // musteriden geldi
   },
   // TAHMINI tarih — OSYM resmi takvimi aciklamadi. Aciklaninca burasi guncellenecek.
   // null yapilirsa alan otomatik olarak "tarih aciklanmadi" bilgilendirme kutusuna doner.
