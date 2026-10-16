@@ -11,5 +11,5 @@ export const navigasyon: NavOgesi[] = [
   { href: "/hakkimizda", etiket: "Hakkımızda", kisaEtiket: "Hakkımızda", ikon: "hakkimizda" },
   { href: "/koclarimiz", etiket: "Koçlarımız", kisaEtiket: "Koçlar", ikon: "koclar" },
   { href: "/basarilarimiz", etiket: "Başarılarımız", kisaEtiket: "Başarılar", ikon: "basarilar" },
-  { href: "/basvuru", etiket: "Bilgi & Başvuru", kisaEtiket: "Başvuru", ikon: "basvuru" },
+  { href: "/basvuru", etiket: "İletişim & Başvuru", kisaEtiket: "Başvuru", ikon: "basvuru" },
 ];

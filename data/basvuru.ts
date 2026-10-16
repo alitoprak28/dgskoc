@@ -1,6 +1,6 @@
 // Basvuru sayfasinin tum metinleri. Musteri istegiyle degisecek alanlar burada.
 export const basvuruSayfasi = {
-  baslik: "Bilgi & Başvuru",
+  baslik: "İletişim & Başvuru",
   aciklama: "Formu doldur, WhatsApp üzerinden ulaşalım",
   surecBasligi: "Nasıl başlarız?",
   surecAdimlari: [
