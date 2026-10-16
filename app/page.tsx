@@ -9,7 +9,6 @@ import { SinavBilgi } from "@/components/SinavBilgi";
 import { YorumKarti } from "@/components/YorumKarti";
 import { anasayfa } from "@/data/icerik";
 import { koclar } from "@/data/koclar";
-import { site } from "@/data/site";
 import { yorumlar } from "@/data/yorumlar";
 
 export default function Anasayfa() {
@@ -54,16 +53,6 @@ export default function Anasayfa() {
             <YorumKarti key={yorum.ad} yorum={yorum} />
           ))}
         </div>
-      </Bolum>
-
-      {/* Sayfadaki ikinci koyu bolum — ritim icin */}
-      <Bolum zemin="lacivert">
-        <p className="text-sm font-semibold text-navy-soft">{anasayfa.oneCikanHikaye.baslik}</p>
-        <blockquote className="mt-4 max-w-3xl text-lg font-semibold leading-relaxed text-white md:text-xl">
-          {site.oneCikanHikaye.ozet}
-        </blockquote>
-        <p className="mt-5 text-sm font-bold text-white">{site.oneCikanHikaye.ad}</p>
-        <p className="text-sm text-navy-soft">{site.oneCikanHikaye.sonuc}</p>
       </Bolum>
 
       <Bolum>
