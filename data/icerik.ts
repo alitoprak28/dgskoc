@@ -43,7 +43,7 @@ export const anasayfa = {
       },
       {
         baslik: "Belirli rutinlerde konu tarama sınavı ile durum analizi",
-        aciklama: "Deneme sınavları sürecine kadar olan bölümde konu tarama sınavı ile gelişim durumunuz değerlendirilir. Bu süreç bazen soru bankası kontrolü şeklinde de olabilir.",
+        aciklama: "Deneme sınavları sürecine kadar olan bölümde konu tarama sınavı ile gelişim durumun değerlendirilir. Bu süreç bazen soru bankası kontrolü şeklinde de olabilir.",
         ikon: "kontrol" as const,
         vurgulu: false,
       },
