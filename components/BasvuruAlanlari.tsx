@@ -12,7 +12,7 @@ type Props = { degerler: BasvuruDegerleri; hatalar: Hatalar; guncelle: AlanGunce
 export function BasvuruAlanlari({ degerler, hatalar, guncelle }: Props) {
   const secilenKoc = kocBul(degerler.kocSlug);
   const ay = Number(degerler.aySayisi);
-  const fiyatGorunsun = Boolean(secilenKoc) && Number.isFinite(ay) && ay >= 1;
+  const fiyatGorunsun = Boolean(secilenKoc?.aylikUcret) && Number.isFinite(ay) && ay >= 1;
 
   return (
     <>
@@ -101,7 +101,7 @@ export function BasvuruAlanlari({ degerler, hatalar, guncelle }: Props) {
       />
 
       {/* Koc ve ay secilince fiyat ozeti belirir */}
-      {fiyatGorunsun && secilenKoc ? (
+      {fiyatGorunsun && secilenKoc?.aylikUcret ? (
         <FiyatOzeti kocAdi={secilenKoc.ad} aySayisi={ay} aylikUcret={secilenKoc.aylikUcret} />
       ) : null}
     </>

@@ -73,6 +73,7 @@ export const koclarimizSayfasi = {
   aciklama: "Alanında başarıya ulaşmış, süreci bizzat yaşamış mentörlerden oluşan ekibimiz",
   detayCta: "Bu koçla çalışmak istiyorum",
   ucretEtiketi: "Aylık ücret",
+  ucretBilgisiYok: "Ücret ve program bilgisi için bizimle iletişime geç.",
   uzmanlikBasligi: "Uzmanlık alanları",
 };
 

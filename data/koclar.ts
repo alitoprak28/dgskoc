@@ -1,141 +1,44 @@
+// Koc bilgileri koclardan parca parca geliyor. Ad ve slug zorunlu; digerleri
+// geldikce doldurulur. Bos birakilan alan sitede hic gorunmez, uydurma veri girilmez.
 export type Koc = {
   slug: string;
   ad: string;
-  puanTuru: "Sayısal" | "Sözel" | "Eşit Ağırlık";
-  puanTuruKisa: "SAY" | "SÖZ" | "EA";
-  derece: number;
-  universite: string;
-  alan: string;
   foto: string; // /public/koclar/... — bos string ise yer tutucu avatar gosterilir
-  biyografi: string; // PLACEHOLDER — musteriden gelecek
+  puanTuru?: "Sayısal" | "Sözel" | "Eşit Ağırlık";
+  puanTuruKisa?: "SAY" | "SÖZ" | "EA";
+  derece?: number;
+  universite?: string;
+  alan?: string;
+  biyografi?: string; // tek paragraf: kendi DGS sureci, nasil calistigi, ogrencileriyle duzeni
   uzmanlik?: string[];
-  aylikUcret: number; // TL. KOCTAN KOCA FARKLI
+  aylikUcret?: number; // TL, koctan koca farkli olabilir
 };
 
-// PLACEHOLDER kayitlar. Gercek fotograf, biyografi ve ucretler musteriden gelince guncellenecek.
 export const koclar: Koc[] = [
-  {
-    slug: "busra-savur",
-    ad: "Büşra Savur",
-    puanTuru: "Eşit Ağırlık",
-    puanTuruKisa: "EA",
-    derece: 2158,
-    universite: "Yeditepe Üniversitesi",
-    alan: "İşletme",
-    foto: "",
-    biyografi:
-      "PLACEHOLDER — koçun kendi DGS süreci, nasıl çalıştığı ve öğrencileriyle kurduğu çalışma düzeni bu alanda anlatılacak.",
-    uzmanlik: ["Matematik", "Program takibi", "Deneme analizi"],
-    aylikUcret: 3000,
-  },
-  {
-    slug: "mert-kaya",
-    ad: "Mert Kaya",
-    puanTuru: "Sayısal",
-    puanTuruKisa: "SAY",
-    derece: 87,
-    universite: "ODTÜ",
-    alan: "Bilgisayar Mühendisliği",
-    foto: "",
-    biyografi:
-      "PLACEHOLDER — koçun kendi DGS süreci, nasıl çalıştığı ve öğrencileriyle kurduğu çalışma düzeni bu alanda anlatılacak.",
-    uzmanlik: ["Matematik", "Geometri", "Sayısal strateji"],
-    aylikUcret: 3500,
-  },
-  {
-    slug: "elif-demir",
-    ad: "Elif Demir",
-    puanTuru: "Sözel",
-    puanTuruKisa: "SÖZ",
-    derece: 156,
-    universite: "Ankara Üniversitesi",
-    alan: "Hukuk",
-    foto: "",
-    biyografi:
-      "PLACEHOLDER — koçun kendi DGS süreci, nasıl çalıştığı ve öğrencileriyle kurduğu çalışma düzeni bu alanda anlatılacak.",
-    uzmanlik: ["Türkçe", "Paragraf", "Sözel mantık"],
-    aylikUcret: 3200,
-  },
-  {
-    slug: "can-sahin",
-    ad: "Can Şahin",
-    puanTuru: "Eşit Ağırlık",
-    puanTuruKisa: "EA",
-    derece: 302,
-    universite: "Boğaziçi Üniversitesi",
-    alan: "Ekonomi",
-    foto: "",
-    biyografi:
-      "PLACEHOLDER — koçun kendi DGS süreci, nasıl çalıştığı ve öğrencileriyle kurduğu çalışma düzeni bu alanda anlatılacak.",
-    uzmanlik: ["Matematik", "Türkçe", "Süre yönetimi"],
-    aylikUcret: 3800,
-  },
-  {
-    slug: "zeynep-yildiz",
-    ad: "Zeynep Yıldız",
-    puanTuru: "Sayısal",
-    puanTuruKisa: "SAY",
-    derece: 421,
-    universite: "İTÜ",
-    alan: "Endüstri Mühendisliği",
-    foto: "",
-    biyografi:
-      "PLACEHOLDER — koçun kendi DGS süreci, nasıl çalıştığı ve öğrencileriyle kurduğu çalışma düzeni bu alanda anlatılacak.",
-    uzmanlik: ["Geometri", "Deneme analizi"],
-    aylikUcret: 2800,
-  },
-  {
-    slug: "emre-aydin",
-    ad: "Emre Aydın",
-    puanTuru: "Eşit Ağırlık",
-    puanTuruKisa: "EA",
-    derece: 634,
-    universite: "Marmara Üniversitesi",
-    alan: "İşletme",
-    foto: "",
-    biyografi:
-      "PLACEHOLDER — koçun kendi DGS süreci, nasıl çalıştığı ve öğrencileriyle kurduğu çalışma düzeni bu alanda anlatılacak.",
-    uzmanlik: ["Türkçe", "Program takibi"],
-    aylikUcret: 2600,
-  },
-  {
-    slug: "selin-korkmaz",
-    ad: "Selin Korkmaz",
-    puanTuru: "Sözel",
-    puanTuruKisa: "SÖZ",
-    derece: 289,
-    universite: "Hacettepe Üniversitesi",
-    alan: "Psikoloji",
-    foto: "",
-    biyografi:
-      "PLACEHOLDER — koçun kendi DGS süreci, nasıl çalıştığı ve öğrencileriyle kurduğu çalışma düzeni bu alanda anlatılacak.",
-    uzmanlik: ["Türkçe", "Paragraf", "Deneme analizi"],
-    aylikUcret: 3000,
-  },
-  {
-    slug: "kerem-yalcin",
-    ad: "Kerem Yalçın",
-    puanTuru: "Sayısal",
-    puanTuruKisa: "SAY",
-    derece: 512,
-    universite: "Yıldız Teknik Üniversitesi",
-    alan: "İnşaat Mühendisliği",
-    foto: "",
-    biyografi:
-      "PLACEHOLDER — koçun kendi DGS süreci, nasıl çalıştığı ve öğrencileriyle kurduğu çalışma düzeni bu alanda anlatılacak.",
-    uzmanlik: ["Matematik", "Geometri", "Süre yönetimi"],
-    aylikUcret: 2700,
-  },
+  { slug: "saban-arici", ad: "Şaban Arıcı", foto: "/koclar/saban-arici.jpg" },
+  { slug: "kevser-kara", ad: "Kevser Kara", foto: "/koclar/kevser-kara.jpg" },
+  { slug: "seyda-inan", ad: "Şeyda İnan", foto: "" },
+  { slug: "ayse-gurses", ad: "Ayşe Gürses", foto: "" },
+  { slug: "halit-orak", ad: "Halit Orak", foto: "" },
+  { slug: "feyza-nur-dogan", ad: "Feyza Nur Doğan", foto: "" },
+  { slug: "cihan-ondas", ad: "Cihan Öndaş", foto: "" },
 ];
 
-// Kart ve select basligi: "Büşra Savur (EA 2158.)"
-export function kocBasligi(koc: Koc): string {
-  return `${koc.ad} (${koc.puanTuruKisa} ${koc.derece}.)`;
+/** "EA 2158." — puan turu ve derece ikisi de varsa, yoksa bos */
+export function dereceEtiketi(koc: Koc): string {
+  return koc.puanTuruKisa && koc.derece ? `${koc.puanTuruKisa} ${koc.derece}.` : "";
 }
 
-// Basvuru formu select etiketi: "Büşra Savur — EA 2158."
+// Kart basligi: "Büşra Savur (EA 2158.)" — derece yoksa yalnizca ad
+export function kocBasligi(koc: Koc): string {
+  const derece = dereceEtiketi(koc);
+  return derece ? `${koc.ad} (${derece})` : koc.ad;
+}
+
+// Basvuru formu select etiketi: "Büşra Savur — EA 2158." — derece yoksa yalnizca ad
 export function kocSecenekEtiketi(koc: Koc): string {
-  return `${koc.ad} — ${koc.puanTuruKisa} ${koc.derece}.`;
+  const derece = dereceEtiketi(koc);
+  return derece ? `${koc.ad} — ${derece}` : koc.ad;
 }
 
 export function kocBul(slug: string): Koc | undefined {

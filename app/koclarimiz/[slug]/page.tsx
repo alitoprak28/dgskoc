@@ -5,7 +5,7 @@ import { Bolum } from "@/components/Bolum";
 import { ButonLink } from "@/components/Buton";
 import { YapisalVeri } from "@/components/YapisalVeri";
 import { koclarimizSayfasi } from "@/data/icerik";
-import { koclar, kocBul } from "@/data/koclar";
+import { dereceEtiketi, kocBasligi, koclar, kocBul } from "@/data/koclar";
 import { fiyatFormatla } from "@/lib/format";
 import { kocVerisi } from "@/lib/yapisalVeri";
 
@@ -23,9 +23,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const koc = kocBul(slug);
   if (!koc) return { title: koclarimizSayfasi.baslik };
 
-  const aciklama = `${koc.universite} ${koc.alan} — ${koc.puanTuru} ${koc.derece}. DGS koçu.`;
+  const ayrinti = [koc.universite, koc.alan].filter(Boolean).join(" ");
+  const aciklama = ayrinti ? `${koc.ad} — ${ayrinti}. DGS Koç ekibinden koç.` : `${koc.ad} — DGS Koç ekibinden koç.`;
   return {
-    title: `${koc.ad} (${koc.puanTuruKisa} ${koc.derece}.)`,
+    title: kocBasligi(koc),
     description: aciklama,
     openGraph: { title: koc.ad, description: aciklama },
   };
@@ -49,21 +50,29 @@ export default async function KocDetaySayfasi({ params }: Props) {
 
         <div>
           <h1 className="text-2xl font-extrabold leading-tight text-navy md:text-3xl">{koc.ad}</h1>
-          <p className="mt-2 text-sm font-semibold text-navy">
-            {koc.puanTuru} · {koc.derece}. sıra
-          </p>
-          <p className="mt-1 text-sm text-gray-text">{koc.universite}</p>
-          <p className="text-sm text-gray-text">{koc.alan}</p>
+          {dereceEtiketi(koc) ? (
+            <p className="mt-2 text-sm font-semibold text-navy">
+              {koc.puanTuru} · {koc.derece}. sıra
+            </p>
+          ) : null}
+          {koc.universite ? <p className="mt-1 text-sm text-gray-text">{koc.universite}</p> : null}
+          {koc.alan ? <p className="text-sm text-gray-text">{koc.alan}</p> : null}
 
-          <p className="mt-6 max-w-2xl whitespace-pre-line text-sm leading-relaxed text-navy">
-            {koc.biyografi}
-          </p>
+          {koc.biyografi ? (
+            <p className="mt-6 max-w-2xl whitespace-pre-line text-sm leading-relaxed text-navy">
+              {koc.biyografi}
+            </p>
+          ) : null}
 
           <div className="mt-8 flex flex-col items-start gap-4 rounded-xl border border-gray-border bg-gray-bg p-4 sm:flex-row sm:items-center sm:justify-between md:p-5">
-            <div>
-              <p className="text-xs text-gray-text">{koclarimizSayfasi.ucretEtiketi}</p>
-              <p className="text-xl font-extrabold text-navy">{fiyatFormatla(koc.aylikUcret)}</p>
-            </div>
+            {koc.aylikUcret ? (
+              <div>
+                <p className="text-xs text-gray-text">{koclarimizSayfasi.ucretEtiketi}</p>
+                <p className="text-xl font-extrabold text-navy">{fiyatFormatla(koc.aylikUcret)}</p>
+              </div>
+            ) : (
+              <p className="text-sm text-navy">{koclarimizSayfasi.ucretBilgisiYok}</p>
+            )}
             <ButonLink href={`/basvuru?koc=${koc.slug}`} className="w-full sm:w-auto">
               {koclarimizSayfasi.detayCta}
             </ButonLink>

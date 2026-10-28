@@ -48,9 +48,12 @@ export function kocVerisi(koc: Koc) {
     "@type": "Person",
     name: koc.ad,
     jobTitle: "DGS Koçu",
-    description: `${koc.puanTuru} alanında ${koc.derece}. sıra. ${koc.universite} ${koc.alan}.`,
+    ...(koc.puanTuru && koc.derece
+      ? { description: `${koc.puanTuru} alanında ${koc.derece}. sıra.` }
+      : {}),
     url: `${site.alanAdi}/koclarimiz/${koc.slug}/`,
-    alumniOf: { "@type": "CollegeOrUniversity", name: koc.universite },
+    ...(koc.universite ? { alumniOf: { "@type": "CollegeOrUniversity", name: koc.universite } } : {}),
+    ...(koc.foto ? { image: `${site.alanAdi}${koc.foto}` } : {}),
     worksFor: { "@type": "EducationalOrganization", name: site.ad, url: site.alanAdi },
   };
 }

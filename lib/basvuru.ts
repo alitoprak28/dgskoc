@@ -99,6 +99,7 @@ export function mesajOlustur(degerler: BasvuruDegerleri, koc: Koc): string {
     `${s.alan}: ${degerler.alan}`,
     `${s.koc}: ${koc.ad}`,
     `${s.sure}: ${ay} ay`,
-    `${s.toplam}: ${fiyatFormatla(koc.aylikUcret * ay)}`,
+    // Ucreti henuz girilmemis kocta toplam satiri yazilmaz
+    ...(koc.aylikUcret ? [`${s.toplam}: ${fiyatFormatla(koc.aylikUcret * ay)}`] : []),
   ].join("\n");
 }

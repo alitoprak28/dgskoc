@@ -20,7 +20,7 @@ export function Avatar({ foto, ad, className, ikonClassName }: AvatarProps) {
       )}
     >
       {foto ? (
-        <Image src={foto} alt={ad} fill sizes="240px" className="object-cover" />
+        <Image src={foto} alt={ad} fill sizes="(min-width: 768px) 320px, 50vw" className="object-cover object-top" />
       ) : (
         <Ikon ad="kullanici" className={cn("h-8 w-8 text-[#B4BAC5]", ikonClassName)} />
       )}
