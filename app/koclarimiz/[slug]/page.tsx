@@ -44,7 +44,7 @@ export default async function KocDetaySayfasi({ params }: Props) {
         <Avatar
           foto={koc.foto}
           ad={koc.ad}
-          className="aspect-[4/3] w-full md:aspect-square"
+          className="mx-auto aspect-[4/5] w-full max-w-sm md:mx-0"
           ikonClassName="h-14 w-14"
         />
 
