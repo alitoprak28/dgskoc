@@ -18,10 +18,10 @@ export const koclar: Koc[] = [
   { slug: "saban-arici", ad: "Şaban Arıcı", foto: "/koclar/saban-arici.jpg" },
   { slug: "kevser-kara", ad: "Kevser Kara", foto: "/koclar/kevser-kara.jpg" },
   { slug: "seyda-inan", ad: "Şeyda İnan", foto: "" },
-  { slug: "ayse-gurses", ad: "Ayşe Gürses", foto: "" },
-  { slug: "halit-orak", ad: "Halit Orak", foto: "" },
+  { slug: "ayse-gurses", ad: "Ayşe Gürses", foto: "/koclar/ayse-gurses.jpg" },
+  { slug: "halit-orak", ad: "Halit Orak", foto: "/koclar/halit-orak.jpg" },
   { slug: "feyza-nur-dogan", ad: "Feyza Nur Doğan", foto: "/koclar/feyza-nur-dogan.jpg" },
-  { slug: "cihan-ondas", ad: "Cihan Öndaş", foto: "" },
+  { slug: "cihan-ondas", ad: "Cihan Öndaş", foto: "/koclar/cihan-ondas.jpg" },
   { slug: "melek-yildiz", ad: "Melek Yıldız", foto: "/koclar/melek-yildiz.jpg" },
 ];
 

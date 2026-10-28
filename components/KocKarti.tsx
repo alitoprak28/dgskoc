@@ -16,7 +16,7 @@ export function KocKarti({ koc }: { koc: Koc }) {
       className={cn(
         "overflow-hidden bg-white p-0 md:p-0",
         // Uzerine gelince fotograf hafifce yakinlasir
-        "[&_img]:transition-transform [&_img]:duration-300 hover:[&_img]:scale-[1.03]"
+        "[&_img]:transition-transform [&_img]:duration-500 [&_img]:ease-out [&:hover_img]:scale-[1.07]"
       )}
     >
       <Avatar
