@@ -54,7 +54,7 @@ export const anasayfa = {
         vurgulu: false,
       },
       {
-        baslik: "Hızlı başvuru",
+        baslik: "Başvuru yap",
         aciklama: "Formu doldur, saniyeler içinde WhatsApp'tan bize ulaş",
         ikon: "whatsapp" as const,
         vurgulu: true,
