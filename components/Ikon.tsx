@@ -14,6 +14,7 @@ export type IkonAdi =
   | "kronometre"
   | "takvim"
   | "grup"
+  | "kontrol"
   | "whatsapp"
   | "kullanici"
   | "ok";
@@ -52,6 +53,13 @@ const yollar: Record<IkonAdi, React.ReactNode> = {
   ),
   grafik: <path d="M4 15.5 9 10l3.5 3.5L20 6" />,
   seviye: <path d="M5 20v-5M10 20V11M15 20V7M20 20V3" />,
+  kontrol: (
+    <>
+      <path d="M8 4H7a2 2 0 0 0-2 2v13a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2h-1" />
+      <rect x="9" y="2.5" width="6" height="3" rx="1" />
+      <path d="m8.5 13 2.2 2.2 4.8-4.7" />
+    </>
+  ),
   grup: (
     <>
       <circle cx="9" cy="8.5" r="3" />
