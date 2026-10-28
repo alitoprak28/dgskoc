@@ -9,7 +9,7 @@ export const anasayfa = {
   },
   degerler: {
     baslik: "Sana ne sunuyoruz?",
-    aciklama: "Seviyeni ölçmekle başlıyor, sınav gününe kadar her hafta yanında oluyoruz.",
+    aciklama: "Seviyeni ölçmekle başlıyor, sınav gününe kadar her an yanında oluyoruz.",
     kartlar: [
       {
         baslik: "Seviye tespit analizi",
