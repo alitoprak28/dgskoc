@@ -9,6 +9,7 @@ export const anasayfa = {
   },
   degerler: {
     baslik: "Sana ne sunuyoruz?",
+    aciklama: "Seviyeni ölçmekle başlıyor, sınav gününe kadar her hafta yanında oluyoruz.",
     kartlar: [
       {
         baslik: "Seviye tespit analizi",
@@ -35,9 +36,21 @@ export const anasayfa = {
         vurgulu: false,
       },
       {
+        baslik: "Haftalık program görüşmesi",
+        aciklama: "Haftada bir program görüşmesi yapıyoruz. Acil durumlarda WhatsApp üzerinden ulaşabiliyorsun; iletişim sıklığı koça göre değişebilir",
+        ikon: "takvim" as const,
+        vurgulu: false,
+      },
+      {
         baslik: "Deneme analizi",
         aciklama: "Düzenli deneme takibiyle nerede olduğunu ve nereye gitmen gerektiğini netleştir",
         ikon: "grafik" as const,
+        vurgulu: false,
+      },
+      {
+        baslik: "Soru çözüm grubu",
+        aciklama: "Tüm koçluk öğrencilerimizin yardımlaştığı, danışmanlarımızın kontrolündeki bir soru çözüm grubumuz var. Takıldığın sorulara en kısa sürede dönüş yapılıyor",
+        ikon: "grup" as const,
         vurgulu: false,
       },
       {
