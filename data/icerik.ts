@@ -42,8 +42,8 @@ export const anasayfa = {
         vurgulu: false,
       },
       {
-        baslik: "Konu tarama sınavıyla durum analizi",
-        aciklama: "Deneme sınavlarına geçene kadar belirli aralıklarla konu tarama sınavlarıyla gelişimini değerlendiriyoruz. Bu kontrol bazen soru bankası üzerinden de yapılıyor",
+        baslik: "Belirli rutinlerde konu tarama sınavı ile durum analizi",
+        aciklama: "Deneme sınavları sürecine kadar olan bölümde konu tarama sınavı ile gelişim durumunuz değerlendirilir. Bu süreç bazen soru bankası kontrolü şeklinde de olabilir.",
         ikon: "kontrol" as const,
         vurgulu: false,
       },
