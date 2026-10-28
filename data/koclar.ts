@@ -20,8 +20,9 @@ export const koclar: Koc[] = [
   { slug: "seyda-inan", ad: "Şeyda İnan", foto: "" },
   { slug: "ayse-gurses", ad: "Ayşe Gürses", foto: "" },
   { slug: "halit-orak", ad: "Halit Orak", foto: "" },
-  { slug: "feyza-nur-dogan", ad: "Feyza Nur Doğan", foto: "" },
+  { slug: "feyza-nur-dogan", ad: "Feyza Nur Doğan", foto: "/koclar/feyza-nur-dogan.jpg" },
   { slug: "cihan-ondas", ad: "Cihan Öndaş", foto: "" },
+  { slug: "melek-yildiz", ad: "Melek Yıldız", foto: "/koclar/melek-yildiz.jpg" },
 ];
 
 /** "EA 2158." — puan turu ve derece ikisi de varsa, yoksa bos */
