@@ -17,7 +17,7 @@ export type Koc = {
 export const koclar: Koc[] = [
   { slug: "saban-arici", ad: "Şaban Arıcı", foto: "/koclar/saban-arici.jpg" },
   { slug: "kevser-kara", ad: "Kevser Kara", foto: "/koclar/kevser-kara.jpg" },
-  { slug: "seyda-inan", ad: "Şeyda İnan", foto: "" },
+  { slug: "seyda-inan", ad: "Şeyda İnan", foto: "/koclar/seyda-inan.jpg" },
   { slug: "cihan-ondas", ad: "Cihan Öndaş", foto: "/koclar/cihan-ondas.jpg" },
   { slug: "halit-orak", ad: "Halit Orak", foto: "/koclar/halit-orak.jpg" },
   { slug: "feyza-nur-dogan", ad: "Feyza Nur Doğan", foto: "/koclar/feyza-nur-dogan.jpg" },
