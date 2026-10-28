@@ -9,6 +9,9 @@ export type IkonAdi =
   | "telefon"
   | "hedef"
   | "grafik"
+  | "seviye"
+  | "oynat"
+  | "kronometre"
   | "whatsapp"
   | "kullanici"
   | "ok";
@@ -46,6 +49,19 @@ const yollar: Record<IkonAdi, React.ReactNode> = {
     </>
   ),
   grafik: <path d="M4 15.5 9 10l3.5 3.5L20 6" />,
+  seviye: <path d="M5 20v-5M10 20V11M15 20V7M20 20V3" />,
+  kronometre: (
+    <>
+      <circle cx="12" cy="13.5" r="7.5" />
+      <path d="M12 9.5v4l2.6 2M9.5 3h5M12 3v2.5" />
+    </>
+  ),
+  oynat: (
+    <>
+      <rect x="3" y="5" width="18" height="14" rx="3" />
+      <path d="m10 9.2 4.8 2.8-4.8 2.8z" />
+    </>
+  ),
   whatsapp: (
     <>
       <path d="M20 12a8 8 0 1 1-2.4-5.7" />

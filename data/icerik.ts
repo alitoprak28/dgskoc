@@ -11,9 +11,27 @@ export const anasayfa = {
     baslik: "Sana ne sunuyoruz?",
     kartlar: [
       {
-        baslik: "Kişisel program",
-        aciklama: "Seviyene ve hedefine uygun, sana özel hazırlanmış haftalık çalışma planı",
+        baslik: "Seviye tespit analizi",
+        aciklama: "İlk olarak deneme sınavıyla seviyeni tespit ediyor, sonraki adımları buna göre planlıyoruz",
+        ikon: "seviye" as const,
+        vurgulu: false,
+      },
+      {
+        baslik: "Kişiye özel kaynak ve YouTube kanalı seçimi",
+        aciklama: "Seviyene uygun kaynakları belirliyoruz. Süreç YouTube tabanlı ilerlediği için sana hitap eden kanalları birlikte seçiyoruz",
+        ikon: "oynat" as const,
+        vurgulu: false,
+      },
+      {
+        baslik: "Kişiye özel haftalık çalışma programı",
+        aciklama: "Sana özel, hedeflerine uygun haftalık program hazırlıyoruz",
         ikon: "hedef" as const,
+        vurgulu: false,
+      },
+      {
+        baslik: "Günlük ve haftalık çalışma süresi takibi",
+        aciklama: "Focus adlı masa saati uygulamasıyla günlük ve haftalık çalışma süreni takip ediyor, çalışma düzenine anında müdahale ediyoruz",
+        ikon: "kronometre" as const,
         vurgulu: false,
       },
       {
@@ -27,6 +45,9 @@ export const anasayfa = {
         aciklama: "Formu doldur, saniyeler içinde WhatsApp'tan bize ulaş",
         ikon: "whatsapp" as const,
         vurgulu: true,
+        // Bu kart adim degil eylem: tiklaninca basvuru formuna gider
+        href: "/basvuru",
+        baglantiMetni: "Başvuru formuna git",
       },
     ],
   },
